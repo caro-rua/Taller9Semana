@@ -1,0 +1,20 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+<mat-toolbar class="colorbarra ">
+    <button  mat-icon-button class="colorbarra " aria-label="Example icon-button with menu icon" >
+        <button mat-icon-button  class="colorbarra" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"><mat-icon >more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item class="colorbarra " routerLink ="/inicio"><i class="bi bi-house-heart"></i><span>Inicio</span></button>
+        <button mat-menu-item class="colorbarra"routerLink ="/calculadora"><i class="bi bi-calculator"></i><span>Calculadora</span></button>
+        <button mat-menu-item  class="colorbarra" routerLink="/formulario"><i class="bi bi-clipboard-check"></i><span>Formulario</span></button>
+        <button mat-menu-item class="colorbarra" routerLink="/presentacion"><i class="bi bi-person-fill"></i><span>Presentación</span></button></mat-menu>
+    </button>
+  
+     <span>Noveno Taller</span>
+     <span class="example-spacer"></span>
+     <button mat-icon-button class="colorbarra" aria-label="Example icon-button with heart icon"><mat-icon>favorite</mat-icon></button>
+     <button mat-icon-button class="colorbarra" aria-label="Example icon-button with share icon"><mat-icon>share</mat-icon></button>
+</mat-toolbar>

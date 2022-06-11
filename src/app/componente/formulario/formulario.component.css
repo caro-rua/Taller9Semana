@@ -1,0 +1,12 @@
+.container{
+    font-family: 'Poppins', sans-serif;
+}
+
+h4{
+    font-family: 'Poppins', sans-serif;
+    color: #6A67CE;
+}
+
+.hiden + input{
+    display: none;
+}

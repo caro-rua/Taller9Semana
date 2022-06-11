@@ -1,0 +1,87 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="container text-center"></div>
+                <div class="card-header big-info text-center text-primary"> 
+                    <h4 class="titulo2">Formulario de donaciones </h4>
+                </div>
+
+                <div class="card-body">
+                    <form [formGroup]="formValue">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label >Nombres</label>
+                                <input type="text" class="form-control"  formControlName="nombres">
+                            </div>
+                            <div class="col-md-6">
+                                <label >Apellidos </label>
+                                <input type="text" class="form-control"  formControlName="apellidos">
+                            </div>
+                            <div class="col-md-2">
+                                <label >Edad</label>
+                                <select class="form-control"  formControlName="edad" >
+                                    <option value="" selected>seleccionar</option>
+                                    <option *ngFor="let item of edad" value="{{item}}">{{item}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label >Ciudad</label>
+                                <select class="form-control"  formControlName="ciudad" >
+                                    <option value=""selected>seleccionar</option>
+                                    <option *ngFor="let item of ciudad" value="{{item}}">{{item}}</option>
+                                </select>
+                            </div>
+                            <div class= "col-md-4">
+                                <label >Cantidad de dinero a donar</label>
+                                <input type="number" class="form-control hiden" formControlName="dinero"><input>
+                            </div>
+                            <div class="col-md-2 my-4">
+                                <button (click)="guardar_detalle(formValue)" type="submit" class="btn btn-success">Enviar</button>
+                            </div>
+                        </div> 
+
+                        <div class= "col-md-4 text-center">
+                            <label > Total de registros </label>
+                            <input type="number" class="form-control"  disabled placeholder="{{contador}}" >
+                        </div>        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto" >
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col"><i class="bi bi-piggy-bank ">Cantidad de dinero donado </i></th>
+                    <th scope="col">eliminar</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of data_detalle; let index = index">
+                    <tr> 
+                        <td>{{index+1}}</td>
+                        <td>{{item.nombres}}</td>
+                        <td>{{item.apellidos}}</td>
+                        <td>{{item.edad}}</td>
+                        <td>{{item.ciudad}}</td>
+                        <td>{{item.dinero}}</td>
+                        <td><button (click)="remover(index)" type="button" class="btn btn-danger "><i class="bi bi-trash"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+  

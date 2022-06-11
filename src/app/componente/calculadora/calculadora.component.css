@@ -1,0 +1,19 @@
+.container{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #DAEAF1;
+    
+}
+
+.num1{
+    margin: 5px;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}

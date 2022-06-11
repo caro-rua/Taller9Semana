@@ -1,0 +1,21 @@
+.titulo {
+    background:#F2D1D1 ;
+    
+  }
+
+  .parrafo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+.avatar{
+  width: 400px;
+  height: 400px;
+}
+
+.icono{
+  font-size: 50px;
+}
+

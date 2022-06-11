@@ -1,0 +1,58 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<div class="container"> 
+    <div class=" form-group">
+      <div class="row">
+       <div class="col-6 col-lg-3 num1"><label for="">Número 1</label>
+         <input type="number" class="form-group form-control" placeholder="Ingrese un número" [(ngModel)]="num1" [(ngModel)]="searchValue" >
+        </div>
+       <div class="col-6 col-lg-3 num1"><label for="">Número 2</label>
+         <input type="number" class=" form-group form-control" placeholder="Ingrese un número" [(ngModel)]="num2" [(ngModel)]="searchValue2" >
+        </div>
+   
+       <!-- Force next columns to break to new line -->
+   
+       <div class="col-12 col-sm-06 num1">     
+         <input type="Button" value="sumar" class="btn btn-outline-info" (click)="sumar()" >
+         <input type="Button" value="restar" class="btn btn-outline-secondary" (click)="restar()">
+         <input type="Button" value="multi "class="btn btn-outline-warning" (click)="multiplicar()">
+         <input type="Button" value="dividir" class="btn btn-outline-dark"(click)="dividir()">
+        </div>
+      <div class="col-6 col-sm-6 num1"> 
+        <label for="">Este es el Resultado</label>
+          <span><h1 [(ngModel)]="searchValue3">{{resultado}}</h1></span>
+          <button type="button" (click)="borrar()"  class="btn btn-danger">Borrar</button>
+      </div>
+      </div>
+    </div>
+
+ 
+    <h1>Programa de: {{titulo}}</h1>
+    <div *ngIf="mensaje_ok">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" >
+      <strong>{{mensaje_ok}}  <i class="bi bi-hand-thumbs-up"></i></strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </div>
+
+    <div *ngIf="mensaje_error">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" >
+      <strong>{{mensaje_error}}<i class="bi bi-hand-thumbs-down"></i></strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </div>
+
+    <div *ngIf="mensaje_numero_negativo">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" >
+      <strong>{{mensaje_numero_negativo}}<i class="bi bi-exclamation-triangle"></i></strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </div>
+ 
+</div>
+
+
+
+
